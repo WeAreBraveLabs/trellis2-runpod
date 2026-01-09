@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 \
     libjpeg-dev \
     ninja-build \
+    git \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
