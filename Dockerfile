@@ -64,8 +64,8 @@ RUN git clone https://github.com/JeffreyXiang/CuMesh.git /tmp/CuMesh --recursive
     && pip install --no-cache-dir --no-build-isolation /tmp/CuMesh \
     && rm -rf /tmp/CuMesh
 
-# Install flash-attn (optional - improves performance)
-RUN pip install --no-cache-dir flash-attn==2.7.3 || true
+# Install flash-attn (improves performance)
+RUN pip install --no-cache-dir --no-build-isolation flash-attn==2.7.3
 
 # Clone TRELLIS.2
 RUN git clone --recursive https://github.com/microsoft/TRELLIS.2.git /app/TRELLIS.2
