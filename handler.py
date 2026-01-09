@@ -174,9 +174,9 @@ def handler(job):
             image,
             seed=seed,
             pipeline_type=pipeline_type,
-            sparse_structure_sampler_params={"num_steps": sparse_structure_steps},
-            shape_slat_sampler_params={"num_steps": slat_sampler_steps},
-            tex_slat_sampler_params={"num_steps": slat_sampler_steps},
+            sparse_structure_sampler_params={"steps": sparse_structure_steps},
+            shape_slat_sampler_params={"steps": slat_sampler_steps},
+            tex_slat_sampler_params={"steps": slat_sampler_steps},
         )[0]
         mesh.simplify(simplify_target)
     except Exception as e:
