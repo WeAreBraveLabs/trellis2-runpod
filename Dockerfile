@@ -10,6 +10,8 @@ ENV HF_HOME=/runpod-volume/huggingface-cache
 ENV CUDA_HOME=/usr/local/cuda
 ENV PATH="${CUDA_HOME}/bin:${PATH}"
 ENV LD_LIBRARY_PATH="${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}"
+# Set CUDA architectures for compilation (8.0=A100, 9.0=H100)
+ENV TORCH_CUDA_ARCH_LIST="8.0;9.0"
 
 WORKDIR /app
 
