@@ -78,8 +78,9 @@ RUN git clone https://github.com/JeffreyXiang/FlexGEMM.git /tmp/FlexGEMM --recur
     && pip install --no-cache-dir --no-build-isolation /tmp/FlexGEMM \
     && rm -rf /tmp/FlexGEMM
 
-# Install flash-attn (improves performance)
-RUN pip install --no-cache-dir --no-build-isolation flash-attn==2.7.3
+# Install flash-attn from pre-built wheel (avoids 30+ min compilation)
+RUN pip install --no-cache-dir flash-attn --no-build-isolation \
+    -f https://github.com/Dao-AILab/flash-attention/releases/expanded_assets/v2.7.3
 
 # Clone TRELLIS.2
 RUN git clone --recursive https://github.com/microsoft/TRELLIS.2.git /app/TRELLIS.2
