@@ -88,7 +88,7 @@ RUN git clone --recursive https://github.com/microsoft/TRELLIS.2.git /app/TRELLI
 RUN pip install --no-cache-dir --no-build-isolation /app/TRELLIS.2/o-voxel
 
 # Add TRELLIS.2 to Python path (it's not a pip package)
-ENV PYTHONPATH="/app/TRELLIS.2:${PYTHONPATH}"
+ENV PYTHONPATH="/app/TRELLIS.2${PYTHONPATH:+:$PYTHONPATH}"
 ENV TRELLIS_PATH=/app/TRELLIS.2
 
 # Copy handler
